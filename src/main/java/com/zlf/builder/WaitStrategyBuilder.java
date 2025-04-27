@@ -37,7 +37,7 @@ public class WaitStrategyBuilder {
         } else if (Objects.nonNull(waitStrategyEnum) && WaitStrategyEnum.TIMEOUT.getType().equals(waitStrategyEnum.getType())) {
             return new TimeoutBlockingWaitStrategy(timeoutMillis, TimeUnit.MILLISECONDS);
         } else {
-            return new YieldingWaitStrategy();
+            return new BlockingWaitStrategy();
         }
     }
 
